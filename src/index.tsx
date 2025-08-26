@@ -1,14 +1,9 @@
 import {createRoot} from "react-dom/client";
 import App from './components/app/App'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import { LazyAbout } from "@/pages/about/About.lazy";
-import { Shop } from "@/pages/shop";
 import { Suspense } from "react";
-import { LazyShop } from "@/pages/shop/Shop.lazy";
-import { Profile } from "./pages/profile";
-import { LazyProfile } from "./pages/profile/profile.lazy";
-import ShopSkeleton from "./pages/shop/ShopSkeleton";
-
+import { LazyHome} from "@/pages/home/Home.lazy";
+import HomeSkeleton from "./pages/home/HomeSkeleton";
 const root = document.getElementById('root');
 
 if (!root) {
@@ -23,16 +18,16 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: '/about',
-                element: <Suspense fallback={'Loading...'} ><LazyAbout /></Suspense>
+                index: true,
+                element: <Suspense fallback={<HomeSkeleton />}><LazyHome/></Suspense>
             },
             {
-                path: '/shop',
-                element: <Suspense fallback={<ShopSkeleton />}><LazyShop /></Suspense>
+                path: '/home',
+                element: <Suspense fallback={<HomeSkeleton />}><LazyHome/></Suspense>
             },
             {
-                path: '/profile',
-                element: <Suspense fallback={'Loading...'} ><LazyProfile /></Suspense>
+                path: '/services',
+                element: <Suspense fallback={<HomeSkeleton />}><LazyHome/></Suspense>
             },
         ]
     },
