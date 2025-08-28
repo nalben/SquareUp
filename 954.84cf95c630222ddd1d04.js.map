@@ -1,0 +1,1 @@
+{"version":3,"file":"954.84cf95c630222ddd1d04.js","mappings":"yIAWA,QAVa,WAIT,OACIA,EAAAA,cAAA,WAGR,C","sources":["webpack://my-app/./src/pages/home/Home.tsx"],"sourcesContent":["import React from 'react';\r\nconst Home = () => {\r\n\r\n\r\n\r\n    return (\r\n        <div>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Home;"],"names":["React"],"sourceRoot":""}
