@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import classes from './App.module.scss';
 import Header from '../header/Header';

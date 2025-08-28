@@ -10,13 +10,10 @@ interface MainbtnProps {
 
 const Mainbtn: React.FC<MainbtnProps> = ({ text, href, variant = 'accent' }) => {
     return (
-        <Link to={href}>
-            <a href="" className={`${classes.mainBtn} ${classes[variant]}`}>
-                {text}
-            </a>
+        <Link to={href} className={`${classes.mainBtn} ${classes[variant]}`}>
+            {text}
         </Link>
     );
 };
 
 export default Mainbtn;
-

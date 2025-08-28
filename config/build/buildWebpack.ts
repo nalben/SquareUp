@@ -13,12 +13,14 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration{
 
     return {
         mode: mode ?? 'development',
-        entry: paths.enrty,
+        entry: paths.entry,
         output: {
-            path : paths.output,
-            filename: '[name].[contenthash].js', 
-            clean: true
+            path: paths.output,
+            filename: '[name].[contenthash].js',
+            clean: true,
+            publicPath: isDev ? '/' : '/SquareUp/', // <- вот здесь разница
         },
+        
         plugins: buildPlugins(options),
         module: {
             rules: buildLoaders(options),

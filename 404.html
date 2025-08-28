@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+<script>
+    const repo = '/SquareUp';
+    // Убираем префикс /SquareUp
+    const path = window.location.pathname.replace(repo, '');
+    window.location.replace(`${repo}/index.html#${path}`);
+</script>
+</head>
+
+<body>
+    <p>Redirecting...</p>
+</body>
+
+</html>

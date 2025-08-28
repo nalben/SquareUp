@@ -1,5 +1,5 @@
-import classes from './Services.module.scss'
 
+import React from 'react';
 const Services = () => {
 
 
@@ -9,7 +9,7 @@ const Services = () => {
 
 
     return (
-        <div className={classes.card__container}>
+        <div>
         </div>
     );
 };
