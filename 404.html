@@ -4,16 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
-    <script>
-        // Имя репозитория на GitHub
-        const repo = '/SquareUp';
-
-        // Берём текущий путь
-        const path = window.location.pathname;
-
-        // Редирект на index.html с хэшем для React Router
-        window.location.replace(`${repo}/index.html#${path}`);
-    </script>
+<script>
+    const repo = '/SquareUp';
+    // Убираем префикс /SquareUp
+    const path = window.location.pathname.replace(repo, '');
+    window.location.replace(`${repo}/index.html#${path}`);
+</script>
 </head>
 
 <body>
