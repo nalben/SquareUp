@@ -1,0 +1,44 @@
+.mainBtn{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    padding: fluid-prop(16, 12, 1920, 1440) fluid-prop(24, 18, 1920, 1440);
+    border-radius: 8px;
+    transition: all 0.5s;
+
+    &.accent{
+        color: var(--grey15);
+        background-color: var(--green50);
+        &:hover {
+            background-color: var(--green70);
+        }
+        &:active {
+            background-color: var(--grey35);
+        }
+    }
+    &.blur{
+        color: var(--white);
+        background-color: var(--grey20-opacity);
+        backdrop-filter: blur(5px);
+        border: 2px solid var(--grey20);
+        padding: 18px 28px;
+        &:hover{
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--grey40);
+        }
+        &:active{
+            filter: brightness(1);
+        }
+    }
+    &.accentBig{
+        padding: 18px 28px;
+        color: var(--grey15);
+        background-color: var(--green50);
+        &:hover {
+            background-color: var(--green70);
+        }
+        &:active {
+            background-color: var(--grey35);
+        }
+    }
+}

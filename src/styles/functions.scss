@@ -1,0 +1,13 @@
+@use "sass:math";
+@function fluid-prop($max, $min, $maxVW: 1920, $minVW: 390) {
+    $slope: math.div($max - $min, $maxVW - $minVW);
+    $yAxisIntersection: $min - $slope * $minVW;
+
+    @return clamp(#{$min}px,
+        #{$yAxisIntersection}px + #{$slope * 100}vw,
+        #{$max}px);
+}
+
+// h1 {
+//     padding-right: fluid-prop(size1, size2, width1, width2);
+// }

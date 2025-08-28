@@ -1,9 +1,10 @@
 import {createRoot} from "react-dom/client";
 import App from './components/app/App'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
 import { Suspense } from "react";
 import { LazyHome} from "@/pages/home/Home.lazy";
 import HomeSkeleton from "./pages/home/HomeSkeleton";
+import { LazyServices } from "./pages/services/services.Lazy";
 const root = document.getElementById('root');
 
 if (!root) {
@@ -22,13 +23,18 @@ const router = createBrowserRouter([
                 element: <Suspense fallback={<HomeSkeleton />}><LazyHome/></Suspense>
             },
             {
+                path: '*',
+                element: <Navigate to="/" replace />
+            },
+            {
                 path: '/home',
                 element: <Suspense fallback={<HomeSkeleton />}><LazyHome/></Suspense>
             },
             {
                 path: '/services',
-                element: <Suspense fallback={<HomeSkeleton />}><LazyHome/></Suspense>
+                element: <Suspense fallback={<HomeSkeleton />}><LazyServices/></Suspense>
             },
+            
         ]
     },
 ]);

@@ -1,0 +1,26 @@
+.burgercontainer{
+    overflow: hidden;
+}
+.menu{
+    position: absolute;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100%;
+    background-color: var(--grey20);
+    justify-content: center;
+    transition: all 0.5s;
+    display: flex;
+    padding-top: 30px;
+}
+.open{
+    transform: translateX(0);
+}
+.burger{
+    transition: all 0.5s;
+    &:hover{
+        opacity: 60%;
+    }
+}

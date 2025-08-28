@@ -1,0 +1,24 @@
+.header{
+    padding-inline: fluid-prop(80, 16, 1440, 390);
+    display: flex;
+    justify-content: space-between;
+    padding-block: 20px;
+    align-items: center;
+    & div:nth-child(4){
+        display: none;
+    }
+    @media(min-width: 1440px) {
+        padding-inline: fluid-prop(162, 80, 1920, 1440);
+    }
+    @media (max-width: 1050px) {
+        nav:nth-child(2){
+            display: none;
+        }
+        & a:nth-child(3){
+            display: none;
+        }
+        & div:nth-child(4) {
+            display: flex;
+        }
+    }
+}

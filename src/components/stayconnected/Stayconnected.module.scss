@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 14px 14px 14px 24px;
+    border-radius: 12px;
+    border: 2px solid var(--grey15);
+    @media (max-width:1250px) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.icons_con{
+    & a{
+        color: var(--green50);
+        padding: fluid-prop(20, 16, 1920, 390);
+        background: linear-gradient(0deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
+        border-radius: 8px;
+        border: 1px solid var(--grey15);
+        transition: all 0.5s;
+        aspect-ratio: 1;
+        &:hover{
+            opacity: 60%;
+        }
+        & svg{
+            width: fluid-prop(24, 20, 1920, 390);
+        }
+    }
+    & span {
+        color: var(--grey90);
+        font-size: fluid-prop(18, 16, 1920, 390);
+        line-height: 150%;
+        font-weight: 500;
+    }
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+
+}

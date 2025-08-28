@@ -1,0 +1,35 @@
+.nav{
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    &.row{
+        flex-direction: row;
+    }
+    &.column{
+        flex-direction: column;
+    }
+    & a{
+        font-size: fluid-prop(18, 14, 1920, 1440);
+        line-height: 150%;
+        font-weight: 600;
+        padding: 14px 28px;
+        border-radius: 8px;
+        color: var(--white);
+        transition: all 0.5s;
+        &:hover {
+            background-color: var(--grey15);
+        }
+    }
+    
+}
+.active {
+    background-color: var(--grey15);
+}
+.footerStyle{
+    font-size: fluid-prop(18, 16, 1920, 390);
+    flex-wrap: wrap;
+    justify-content: center;
+    & a{
+        padding: fluid-prop(14, 7, 1920, 390) fluid-prop(28, 14, 1920, 390);
+    }
+}
