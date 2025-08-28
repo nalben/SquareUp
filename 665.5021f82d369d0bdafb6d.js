@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[665],{665:(e,a,c)=>{c.r(a),c.d(a,{default:()=>n});const t={},n=function(){return React.createElement("div",{className:t.card__container})}}}]);
+//# sourceMappingURL=665.5021f82d369d0bdafb6d.js.map

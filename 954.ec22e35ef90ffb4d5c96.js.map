@@ -1,0 +1,1 @@
+{"version":3,"file":"954.ec22e35ef90ffb4d5c96.js","mappings":"4HAUA,QAVa,WAIT,OACIA,MAAAC,cAAA,WAGR,C","sources":["webpack://my-app/./src/pages/home/Home.tsx"],"sourcesContent":["const Home = () => {\r\n\r\n\r\n\r\n    return (\r\n        <div>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Home;"],"names":["React","createElement"],"sourceRoot":""}
