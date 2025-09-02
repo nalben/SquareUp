@@ -1,18 +1,20 @@
 import React from 'react';
-import classes from './Stayconnected.module.scss'
-import Facebook from '@/assets/icons/facebook.svg'
-import Twitter from '@/assets/icons/twitter.svg'
-import Linkedin from '@/assets/icons/linkedin.svg'
+import classes from './Stayconnected.module.scss';
 import Iconbox from '../UI/iconbox/Iconbox';
+import footerData from '@/assets/data/footer/stay.json';
 
-const Stayconnected = () => {
+const Stayconnected: React.FC = () => {
     return (
         <div className={classes.container}>
             <span>Stay Connected</span>
             <div className={classes.icons_con}>
-                <Iconbox href="https://www.facebook.com/" icon={<Facebook />} />
-                <Iconbox href="https://x.com/" icon={<Twitter />} />
-                <Iconbox href="https://www.linkedin.com/" icon={<Linkedin />} />
+                {footerData.map((item) => (
+                    <Iconbox
+                        key={item.icon}
+                        href={item.href}
+                        iconName={item.icon}
+                    />
+                ))}
             </div>
         </div>
     );

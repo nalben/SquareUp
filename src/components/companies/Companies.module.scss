@@ -1,0 +1,51 @@
+.companies{
+    position: relative;
+}
+.companies_con {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+
+    transition: all 0.5s;
+    padding-block: 40px;
+    & a {
+        color: var(--white);
+        transition: opacity 0.5s;
+        padding: 20px fluid-prop(50, 40, 1440, 390);
+        &:hover{
+            opacity: 0.3;
+        }
+    }
+    & svg{
+        height: fluid-prop(50, 40, 1920, 1440);
+    }
+    @media (min-width:730px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width:1440px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+
+}
+.link_con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.trusted_absolute {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%);
+    left: 50%;
+
+
+    font-size: fluid-prop(18, 14, 1920, 1440);
+    color: var(--green99);
+    padding: fluid-prop(20, 14, 1920, 390) fluid-prop(34, 24, 1920, 390);
+    background-color: var(--grey10);
+    border: 1px solid var(--grey15);
+    border-radius: 100px;
+}

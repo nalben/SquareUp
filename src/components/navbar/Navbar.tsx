@@ -4,7 +4,7 @@ import classes from './Navbar.module.scss';
 
 interface NavbarProps {
     direction?: 'row' | 'column';
-    onLinkClick?: () => void; // колбэк для закрытия меню
+    onLinkClick?: () => void; 
     style?: 'header' | 'footer';
 }
 

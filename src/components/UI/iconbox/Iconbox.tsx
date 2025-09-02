@@ -1,17 +1,22 @@
 import React from 'react';
 
 interface IconboxProps {
-    href: string;            // ссылка
-    icon: React.ReactNode; // сам элемент (иконка или любой JSX)
+    href: string;
+    iconName: string;
 }
 
-const Iconbox: React.FC<IconboxProps> = ({ href, icon }) => {
+const Iconbox: React.FC<IconboxProps> = ({ href, iconName }) => {
+    const iconsContext = require.context('@/assets/icons', false, /\.svg$/);
+    const IconComponent = iconsContext(`./${iconName}.svg`).default;
+
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer">{icon}</a>
+        <a href={href} target="_blank" rel="noopener noreferrer">
+            <IconComponent />
+        </a>
     );
 };
 
 export default Iconbox;
 
-
-{/* <Iconbox href="https://www.linkedin.com/" icon={<Linkedin />} /> */}
+{/* <Iconbox href="https://www.linkedin.com/" iconName="Linkedin" />
+<Iconbox href="https://www.twitter.com/" iconName="Twitter" /> */}

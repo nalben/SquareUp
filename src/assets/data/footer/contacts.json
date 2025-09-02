@@ -1,0 +1,5 @@
+[
+  { "icon": "mail", "text": "hello@squareup.com" },
+  { "icon": "call",   "text": "+91 91813 23 2309" },
+  { "icon": "geo",   "text": "Somewhere in the World" }
+]

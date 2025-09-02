@@ -10,33 +10,30 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
     const isDev = options.mode === 'development';
 
-    const assetLoader = {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        include: path.resolve(__dirname, '../../src/assets/img'),
-        type: 'asset/resource',
-    };
+    const path = require('path');
 
-    const svgrLoader = {
-        test: /\.svg$/i,
-        include: path.resolve(__dirname, '../../src/assets/icons'),
-        issuer: /\.[jt]sx?$/,
-        use: [
-            {
-                loader: '@svgr/webpack',
+    const assetLoader = { test: /\.(png|jpe?g|gif|svg)$/i, 
+        include: path.resolve(__dirname, '../../src/assets/img'),
+        type: 'asset/resource', };
+
+
+        const svgrLoader = {
+            test: /\.svg$/i,
+            include: path.resolve(__dirname, '../../src/assets/icons'),
+            use: [ { loader: '@svgr/webpack',
                 options: {
                     icon: false,
                     svgoConfig: {
-                        plugins: [
-                            {
-                                name: 'convertColors',
-                                params: { currentColor: true }
-                            }
-                        ]
-                    }
-                }
-            }
-        ],
-    };
+                        plugins: [ {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true 
+                            }, 
+                        }, ],
+                    }, 
+                }, 
+            }, ], 
+        };
 
     const cssLoaderWithModules = {
         loader: "css-loader",
@@ -70,6 +67,9 @@ const scssLoader = {
         },
     ],
 };
+
+
+
 
     const tsLoader = {
         exclude: /node_modules/,
