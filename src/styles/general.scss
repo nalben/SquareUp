@@ -76,9 +76,11 @@ a {
 
 
 :global(.border-content){
-    border: 1px solid var(--grey15);
+    border-block: 1px solid var(--grey15);
 }
-
+:global(.border-content-block) {
+    border-inline: 1px solid var(--grey15);
+}
 
 
 
