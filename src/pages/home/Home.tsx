@@ -7,7 +7,7 @@ const Home = () => {
 
 
     return (
-        <div className={`${classes.home} border-content-block`}>
+        <div className={classes.home}>
             <Hero />
             <Companies />
         </div>

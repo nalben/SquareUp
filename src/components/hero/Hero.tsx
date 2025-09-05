@@ -3,7 +3,6 @@ import classes from './Hero.module.scss'
 import Mainbtn from '../UI/mainbtn/Mainbtn';
 import background from '@/assets/img/background.png'
 
-
 const Hero = () => {
     return (
         <div className={classes.hero} style={{ backgroundImage: `url(${background})` }}>
