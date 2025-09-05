@@ -15,7 +15,7 @@ export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): C
     const isProd = mode === 'production';
 
     const plugins: Configuration['plugins'] = [
-        new HtmlWebpackPlugin({template: paths.html, favicon: path.resolve(paths.public, 'ico_pinterest.svg') }),
+        new HtmlWebpackPlugin({template: paths.html, favicon: path.resolve(paths.public, 'Logo.svg') }),
         new DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),
             __ENV__: JSON.stringify(mode),

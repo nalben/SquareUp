@@ -1,3 +1,38 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './components/app/App'
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Suspense } from "react";
+import { LazyHome } from "@/pages/home/Home.lazy";
+import HomeSkeleton from "./pages/home/HomeSkeleton";
+import { LazyServices } from "./pages/services/services.Lazy";
+
+const root = document.getElementById('root');
+if (!root) throw new Error('root not found');
+const container = createRoot(root);
+
+container.render(
+    <HashRouter>
+        <Routes>
+            <Route path="/" element={<App />}>
+                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route index element={<Suspense fallback={<HomeSkeleton />}><LazyHome /></Suspense>} />
+                <Route path="home" element={<Suspense fallback={<HomeSkeleton />}><LazyHome /></Suspense>} />
+                <Route path="services" element={<Suspense fallback={<HomeSkeleton />}><LazyServices /></Suspense>} />
+            </Route>
+        </Routes>
+    </HashRouter>
+);
+
+
+
+
+
+
+
+
+
+
 // import {createRoot} from "react-dom/client";
 // import App from './components/app/App'
 // import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
@@ -47,29 +82,3 @@
 // container.render(
 //     <RouterProvider router={router} />
 // )
-
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './components/app/App'
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Suspense } from "react";
-import { LazyHome } from "@/pages/home/Home.lazy";
-import HomeSkeleton from "./pages/home/HomeSkeleton";
-import { LazyServices } from "./pages/services/services.Lazy";
-
-const root = document.getElementById('root');
-if (!root) throw new Error('root not found');
-const container = createRoot(root);
-
-container.render(
-    <HashRouter>
-        <Routes>
-            <Route path="/" element={<App />}>
-                <Route path="*" element={<Navigate to="/" replace />} />
-                <Route index element={<Suspense fallback={<HomeSkeleton />}><LazyHome /></Suspense>} />
-                <Route path="home" element={<Suspense fallback={<HomeSkeleton />}><LazyHome /></Suspense>} />
-                <Route path="services" element={<Suspense fallback={<HomeSkeleton />}><LazyServices /></Suspense>} />
-            </Route>
-        </Routes>
-    </HashRouter>
-);

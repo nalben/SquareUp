@@ -10,7 +10,7 @@ const Header = () => {
         <header className={`${classes.header} border-content`}>
             <Logo />
             <Navbar direction="row" style='header'/>
-            <Mainbtn text="Contact Us" href="/Contact" variant="accent"/>
+            <Mainbtn text="Contact Us" href="/contact" variant="accent"/>
             <Burgermenu />
         </header>
     );

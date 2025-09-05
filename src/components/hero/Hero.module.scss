@@ -1,0 +1,89 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: fluid-prop(112, 80, 1920, 390) fluid-prop(274, 205, 1920, 390) ;
+    align-items: center;
+    // background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    & h1{
+        font-size: fluid-prop(68, 34, 1920, 390);
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 30px;
+        letter-spacing: 0px;
+    }
+
+    @media (max-width:850px) {
+        background-size: 900px;
+    }
+}
+
+
+
+
+
+
+.for{
+    width: max-content;
+    align-self: center;
+    display: flex;
+    align-items: end;
+    gap: 6px;
+    margin-bottom: 40px;
+    justify-content: center;
+    padding: fluid-prop(24, 18, 1920, 1440) fluid-prop(40, 30, 1920, 1440);
+    background-color: #24242433;
+    border-radius: 20px;
+    border: 1px solid var(--grey15);
+
+    @media (max-width:800px) {
+        display: none;
+    }
+
+    & span {
+        font-size: fluid-prop(22, 16, 1920, 1440);
+        font-weight: 400;
+        padding: 12px 14px;
+        background-color: var(--grey15);
+        border-radius: 8px;
+        display: inline-block;
+        color: var(--white);
+    }
+    & h6 {
+        font-size: fluid-prop(22, 16, 1920, 1440);
+        color: var(--grey60);
+        margin-bottom: 12px;
+        font-weight: 400;
+    }
+}
+.for2{
+    width: fit-content;
+    align-self: center;
+    align-items: end;
+    text-align: center;
+    margin-bottom: 40px;
+    justify-content: center;
+    display: none;
+    font-size: fluid-prop(22, 16, 1920, 1440);
+    color: var(--grey60);
+    margin-bottom: 12px;
+    font-weight: 400;
+    padding: 18px 20px;
+    background-color: #24242433;
+    border-radius: 20px;
+    border: 1px solid var(--grey15);
+
+    @media (max-width:800px) {
+            display: flex;
+    }
+}
+
+.btns{
+    display: flex;
+    gap: 13px;
+    & a{
+        padding: fluid-prop(18, 14, 1920, 1440) fluid-prop(28, 20, 1920, 1440) !important;
+    }
+}
