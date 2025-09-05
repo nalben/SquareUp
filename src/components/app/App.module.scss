@@ -15,8 +15,8 @@
     flex-direction: column;
 }
 .pagecontent{
-    padding-inline: fluid-prop(162, 80, 1920, 1440);
+    padding-inline: fluid-prop(160, 78, 1920, 1440);
     @media(max-width: 1440px){
-        padding-inline: fluid-prop(80, 16, 1440, 390);
+        padding-inline: fluid-prop(78, 14, 1440, 390);
     }
 }
