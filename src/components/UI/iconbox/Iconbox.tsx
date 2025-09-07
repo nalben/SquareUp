@@ -18,5 +18,7 @@ const Iconbox: React.FC<IconboxProps> = ({ href, iconName }) => {
 
 export default Iconbox;
 
+// оно короче делает иконку ссылкой
+
 {/* <Iconbox href="https://www.linkedin.com/" iconName="Linkedin" />
 <Iconbox href="https://www.twitter.com/" iconName="Twitter" /> */}

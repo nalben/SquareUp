@@ -6,7 +6,7 @@ import background from '@/assets/img/background.png'
 const Hero = () => {
     return (
         <div className={classes.hero} style={{ backgroundImage: `url(${background})` }}>
-            <h1>A Digital Product Studio <br /> that will Work</h1>
+            <h1>A Digital Product Studio that will Work</h1>
             <div className={classes.for}>
                 <h6>For</h6>
                 <span>Startups</span>

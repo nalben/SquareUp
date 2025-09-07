@@ -1,0 +1,17 @@
+.icon_con {
+    display: flex;
+    width: max-content;
+    color: var(--green50);
+    padding: fluid-prop(24, 16, 1920, 390);
+    background: linear-gradient(0deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
+    border-radius: 8px;
+    border: 1px solid var(--grey15);
+    transition: all 0.5s;
+    & svg{
+        width: fluid-prop(40, 26, 1920, 390);
+    }
+    &:hover {
+        opacity: 60%;
+    }
+}
+

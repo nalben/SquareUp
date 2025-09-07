@@ -1,0 +1,31 @@
+.backcon{
+    padding: 120px 300px;
+    padding: fluid-prop(100, 50, 1440, 390) fluid-prop(250, 16, 1440, 390);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-wrap: balance;
+    & h1{
+        color: var(--white);
+        font-size: fluid-prop(38, 28, 1440, 390);
+        @media (min-width: 1440px) {
+            font-size: fluid-prop(48, 38, 1920, 1440)
+        }
+    }
+    & h6{
+        color: var(--grey90);
+        font-size: fluid-prop(16, 14, 1440, 390);
+        @media (min-width: 1440px) {
+            font-size: fluid-prop(18, 16, 1920, 1440)
+        }
+    }
+    @media (min-width: 1440px) {
+        padding: fluid-prop(120, 100, 1920, 1440) fluid-prop(300, 250, 1920, 1440)
+    }
+}

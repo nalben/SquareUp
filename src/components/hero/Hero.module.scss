@@ -4,7 +4,6 @@
     justify-content: center;
     padding-block: fluid-prop(112, 80, 1920, 390) fluid-prop(274, 205, 1920, 390) ;
     align-items: center;
-    // background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
     & h1{
@@ -13,6 +12,7 @@
         font-weight: 600;
         margin-bottom: 30px;
         letter-spacing: 0px;
+        text-wrap: balance;
     }
 
     @media (max-width:850px) {
