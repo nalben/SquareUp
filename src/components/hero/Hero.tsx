@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Hero.module.scss'
-import Mainbtn from '../UI/mainbtn/Mainbtn';
+import Mainbtn from '../_UI/mainbtn/Mainbtn';
 import background from '@/assets/img/background.png'
 
 const Hero = () => {

@@ -1,0 +1,9 @@
+.cardscon {
+    display: grid;
+    grid-template-columns: 1fr;
+    --border: 1px var(--grey15) solid;
+    @media (min-width: 1100px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

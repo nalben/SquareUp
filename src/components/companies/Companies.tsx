@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Companies.module.scss'
 import companiesData from '@/assets/data/companies/companies.json'
-import Iconbox from '../UI/iconbox/Iconbox';
+import Iconbox from '../_UI/iconbox/Iconbox';
 
 const Companies = () => {
     return (

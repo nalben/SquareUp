@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
 import classes from './Footer.module.scss';
-import Logo from '../UI/logo/Logo';
+import Logo from '../_UI/logo/Logo';
 import Stayconnected from '../stayconnected/Stayconnected';
 import { icons, SvgIcon } from '@/utils/icons'; // твой require.context файл
 import contactData from '@/assets/data/footer/contacts.json'; // JSON с mail, call, geo

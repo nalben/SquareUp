@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Stayconnected.module.scss';
-import Iconbox from '../UI/iconbox/Iconbox';
+import Iconbox from '../_UI/iconbox/Iconbox';
 import footerData from '@/assets/data/footer/stay.json';
 
 const Stayconnected: React.FC = () => {

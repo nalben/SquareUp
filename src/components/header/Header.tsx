@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../UI/logo/Logo';
+import Logo from '../_UI/logo/Logo';
 import classes from './Header.module.scss'
-import Mainbtn from '../UI/mainbtn/Mainbtn';
+import Mainbtn from '../_UI/mainbtn/Mainbtn';
 import Navbar from '../navbar/Navbar';
 import Burgermenu from '../burger/Burgermenu';
 

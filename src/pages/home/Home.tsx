@@ -3,6 +3,7 @@ import Hero from '@/components/hero/Hero';
 import classes from './Home.module.scss'
 import React from 'react';
 import Ourservices from '@/components/ourservices/Ourservices';
+import Whychoose from '@/components/whychoose/Whychoose'
 
 const Home = () => {
 
@@ -13,6 +14,7 @@ const Home = () => {
             <Hero />
             <Companies />
             <Ourservices />
+            <Whychoose />
         </div>
         
     );

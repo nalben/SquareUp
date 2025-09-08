@@ -7,7 +7,7 @@ import classes from './Ourservices.module.scss'
 const Ourservices = () => {
     return (
       <SectionBlock title="Our Services" subtitle="Transform your brand with our innovative digital solutions that captivate and engage your audience." background={back} >
-        <div className={classes.cardscon}>
+        <div className={`${classes.cardscon} border-content-block`}>
           <Servicescard />
         </div>
       </SectionBlock>
