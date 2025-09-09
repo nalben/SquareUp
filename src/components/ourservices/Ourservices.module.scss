@@ -10,6 +10,12 @@
         grid-template-columns: 1fr 1fr;
         & div:nth-child(2) {
             border: none;
+            border-left: var(--border);
+        }
+        & div:nth-child(3){
+            grid-column: span 2;
+            min-height: fluid-prop(510, 244, 1440, 390);
+            border-top: var(--border);
         }
     }
     @media (min-width: 1100px) {
@@ -17,6 +23,11 @@
         & div:nth-child(2) {
             border-right: var(--border);
             border-left: var(--border);
+        }
+        & div:nth-child(3) {
+            grid-column: span 1;
+            min-height: fluid-prop(510, 344, 1440, 390);
+            border: none;
         }
     }
 }
