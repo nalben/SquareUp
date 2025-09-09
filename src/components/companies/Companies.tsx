@@ -9,13 +9,12 @@ const Companies = () => {
         <div className={`${classes.companies} border-content-block border-content`}>
             <div className={classes.companies_con}>
                 {companiesData.map((item) => (
-                    <div className={classes.link_con}>
-                        <Iconbox
-                        key={item.icon}
-                        href={item.href}
-                        iconName={item.icon}
+                <div key={item.icon} className={classes.link_con}>
+                    <Iconbox
+                    href={item.href}
+                    iconName={item.icon}
                     />
-                    </div>
+                </div>
                 ))}
             </div>
             <div className={classes.trusted_absolute}>

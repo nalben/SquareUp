@@ -4,6 +4,7 @@ import classes from './Home.module.scss'
 import React from 'react';
 import Ourservices from '@/components/ourservices/Ourservices';
 import Whychoose from '@/components/whychoose/Whychoose'
+import Reviews from '@/components/reviews/Reviews';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Companies />
             <Ourservices />
             <Whychoose />
+            <Reviews />
         </div>
         
     );
