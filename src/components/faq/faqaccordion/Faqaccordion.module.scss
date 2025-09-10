@@ -40,27 +40,8 @@
             border-bottom: none;
         }
     & .item_con{
-        display: flex;
         padding: fluid-prop(30, 24, 1440, 390) fluid-prop(40, 30, 1440, 390);
         gap: fluid-prop(30, 20, 1920, 1440);
-        & div:nth-child(1){
-            color: var(--green50);
-            min-width: fluid-prop(62, 52, 1440, 390);
-            min-height: fluid-prop(62, 52, 1440, 390);
-            max-width: fluid-prop(62, 52, 1440, 390);
-            max-height: fluid-prop(62, 52, 1440, 390);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: fluid-prop(24, 20, 1440, 390);
-            font-weight: 600;
-            line-height: 150%;
-        }
-    }
-    & .details_con{
-        display: flex;
-        align-items: center;
-        width: 100%;
     }
     & details{
         width: 100%;
@@ -80,15 +61,35 @@
             block-size: auto;
         }
         & summary{
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto auto;
+            transition: grid-template-rows 0.5s;
+            @media (min-width:950px) {
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto;
+            }
             align-items: center;
-            position: relative;
+            >div:first-of-type{
+                color: var(--green50);
+                min-width: fluid-prop(62, 52, 1440, 390);
+                min-height: fluid-prop(62, 52, 1440, 390);
+                max-width: fluid-prop(62, 52, 1440, 390);
+                max-height: fluid-prop(62, 52, 1440, 390);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: fluid-prop(24, 20, 1440, 390);
+                font-weight: 600;
+                line-height: 150%;
+            }
             & h2{
                 font-size: fluid-prop(18, 16, 1440, 390);
                 line-height: 150%;
                 font-weight: 500;
                 max-width: 85%;
                 transition: all 0.5s;
+                margin-left: 20px;
             }
             & svg{
                 position: absolute;
@@ -97,19 +98,65 @@
                 color: var(--white);
                 transition: all 0.5s;
             }
-            
-        }
-        & p {
-            font-size: fluid-prop(16, 14, 1440, 390);
-            color: var(--grey90);
-            line-height: 150%;
-            text-wrap: balance;
+            & p {
+                font-size: fluid-prop(16, 14, 1440, 390);
+                color: var(--grey90);
+                line-height: 150%;
+                text-wrap: balance;
+                margin-top: 10px;
+                
+            }
+            & .p_con{
+                grid-column: span 2;
+                overflow: hidden;
+                display: grid;
+                overflow: hidden;
+                grid-template-rows: 0fr;
+            }
+            & .p_con > .p_con2{
+                overflow: hidden;
+            }
+            & .p_con2{
+                opacity: 1;
+            }
+            & .h2_con{
+                position: relative;
+                align-self: center;
+                justify-content: center;
+                
+                & h2{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    min-height: fluid-prop(62, 52, 1440, 390);
+                }
+            }
+            @media (min-width:950px) {
+                >div:first-of-type{
+                    grid-row: span 2;
+                    justify-items: start;
+                    align-self: self-start;
+                    margin-right: 20px;
+                }
+                & .p_con {
+                    grid-column: span 1;
+                    & p{
+                        margin-top: 0px;
+                        padding-top: 10px;
+                    }
+                }
+                & .h2_con{
+                    & h2{
+                        margin: 0px;
+                    }
+                }
+            }
         }
     }
     @media (min-width:1440px) {
         & .item_con {
             padding: fluid-prop(50, 40, 1920, 1440) fluid-prop(34, 30, 1920, 1440);
-            & div:nth-child(1) {
+            & >div:first-of-type {
                 min-width: fluid-prop(80, 62, 1920, 1440);
                 min-height: fluid-prop(80, 62, 1920, 1440);
                 max-width: fluid-prop(80, 62, 1920, 1440);

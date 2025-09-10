@@ -83,16 +83,18 @@ a {
 }
 :global(.open) {
     transition: all 0.5s;
+    transition: grid-template-rows 0.5s;
+    grid-template-rows: 1fr !important;
     & svg{
         transform: rotate(-45deg);
         color: var(--green50) !important;
     }
     & h2{
         color: var(--green70);
-        padding-bottom: fluid-prop(20, 16, 1920, 1440);
     }
 }
 :global(.close) {
+    transition: all 0.5s;
     & svg{
         transform: rotate(deg);
     }

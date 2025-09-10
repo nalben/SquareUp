@@ -19,22 +19,20 @@ const Faqaccordion = () => {
 
     return (
       <div key={item.count} className={classes.item_con}>
-        <IconCon>{item.count}</IconCon>
-        <div className={classes.details_con}>
-          <details
-            open={isOpen}
-            onClick={(e) => {
-              e.preventDefault();
-              handleToggle(index);
-            }}
-          >
+          <details open={isOpen} onClick={(e) => { e.preventDefault(); handleToggle(index); }}>
             <summary className={isOpen ? 'open' : 'close'}>
-              <h2>{item.question}</h2>
-              <Close />
+                <IconCon>{item.count}</IconCon>
+              <div className={classes.h2_con}>
+                <h2>{item.question}</h2>
+                <Close />
+              </div>
+              <div className={`${classes.p_con} ${isOpen ? 'open' : 'close'}`}>
+                <div className={classes.p_con2}>
+                  <p>{item.answer}</p>
+                </div>
+              </div>
             </summary>
-            <p>{item.answer}</p>
           </details>
-        </div>
       </div>
     );
   };
