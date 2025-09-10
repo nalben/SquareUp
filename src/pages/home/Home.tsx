@@ -5,6 +5,7 @@ import React from 'react';
 import Ourservices from '@/components/ourservices/Ourservices';
 import Whychoose from '@/components/whychoose/Whychoose'
 import Reviews from '@/components/reviews/Reviews';
+import Faq from '@/components/faq/Faq';
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Ourservices />
             <Whychoose />
             <Reviews />
+            <Faq />
         </div>
         
     );

@@ -81,7 +81,22 @@ a {
 :global(.border-content-block) {
     border-inline: 1px solid var(--grey15);
 }
-
+:global(.open) {
+    transition: all 0.5s;
+    & svg{
+        transform: rotate(-45deg);
+        color: var(--green50) !important;
+    }
+    & h2{
+        color: var(--green70);
+        padding-bottom: fluid-prop(20, 16, 1920, 1440);
+    }
+}
+:global(.close) {
+    & svg{
+        transform: rotate(deg);
+    }
+}
 
 
 

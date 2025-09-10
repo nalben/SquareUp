@@ -1,7 +1,7 @@
 .icon_con {
     display: flex;
     width: max-content;
-    color: var(--green50);
+    color: inherit;
     padding: fluid-prop(24, 16, 1920, 390);
     background: linear-gradient(0deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
     border-radius: 8px;

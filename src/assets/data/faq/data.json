@@ -1,0 +1,42 @@
+[
+  { 
+    "count": "01", 
+    "question": "What services does SquareUp provide?", 
+    "answer": "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more." 
+  },
+  { 
+    "count": "02", 
+    "question": "How can SquareUp help my business?", 
+    "answer": "We help businesses grow by creating digital solutions that improve customer engagement, streamline operations, and strengthen brand identity. Our team tailors strategies and products to your specific goals and audience." 
+  },
+  { 
+    "count": "03", 
+    "question": "What industries does SquareUp work with?", 
+    "answer": "We collaborate with clients across diverse industries including technology, healthcare, finance, e-commerce, education, and creative sectors. Our flexible approach allows us to adapt to the needs of any business." 
+  },
+  { 
+    "count": "04", 
+    "question": "How long does it take to complete a project with SquareUp?", 
+    "answer": "Project timelines vary depending on complexity and scope. Smaller projects may take a few weeks, while larger, more custom solutions can range from several months to longer. We provide clear timelines after the initial consultation." 
+  },
+  { 
+    "count": "05", 
+    "question": "Do you offer ongoing support and maintenance after the project is completed?", 
+    "answer": "Yes. We provide post-launch support, regular updates, performance monitoring, and maintenance packages to ensure your solution stays secure, functional, and up-to-date." 
+  },
+  { 
+    "count": "06", 
+    "question": "Can you work with existing design or development frameworks?", 
+    "answer": "Absolutely. Our team can integrate into existing design systems, work with established frameworks, or upgrade outdated ones. We ensure smooth collaboration without disrupting your current workflows." 
+  },
+  { 
+    "count": "07", 
+    "question": "How involved will I be in the project development process?", 
+    "answer": "We encourage active collaboration. You’ll be involved through regular updates, feedback sessions, and milestone reviews, ensuring the final product aligns with your vision and business goals." 
+  },
+  { 
+    "count": "08", 
+    "question": "Can you help with website or app maintenance and updates?", 
+    "answer": "Yes, we provide ongoing maintenance services including bug fixes, feature enhancements, design updates, and performance improvements to keep your website or app running smoothly." 
+  }
+]
