@@ -87,7 +87,6 @@
                 font-size: fluid-prop(18, 16, 1440, 390);
                 line-height: 150%;
                 font-weight: 500;
-                max-width: 85%;
                 transition: all 0.5s;
                 margin-left: 20px;
             }
@@ -128,6 +127,7 @@
                     height: 100%;
                     display: flex;
                     align-items: center;
+                    max-width: 75%;
                     min-height: fluid-prop(62, 52, 1440, 390);
                 }
             }
@@ -148,6 +148,8 @@
                 & .h2_con{
                     & h2{
                         margin: 0px;
+                        max-width: 80%;
+                        text-wrap: balance;
                     }
                 }
             }
