@@ -6,7 +6,7 @@ interface IconboxProps {
 }
 
 const Iconbox: React.FC<IconboxProps> = ({ href, iconName }) => {
-    const iconsContext = require.context('@/assets/icons', false, /\.svg$/);
+    const iconsContext = require.context('@/assets/icons/monochrome', false, /\.svg$/);
     const IconComponent = iconsContext(`./${iconName}.svg`).default;
 
     return (

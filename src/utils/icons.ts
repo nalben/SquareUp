@@ -1,6 +1,6 @@
 import React from 'react';
 
-const reqIcons = (require as any).context('../assets/icons', false, /\.svg$/);
+const reqIcons = (require as any).context('../assets/icons/monochrome/', false, /\.svg$/);
 
 export type SvgIcon = React.FC<React.SVGProps<SVGSVGElement>>;
 

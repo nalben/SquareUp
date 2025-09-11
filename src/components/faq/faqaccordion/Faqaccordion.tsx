@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FaqData from '@/assets/data/faq/data.json';
 import classes from './Faqaccordion.module.scss';
 import IconCon from '@/components/_UI/iconcon/Iconcon';
-import Close from '@/assets/icons/Close.svg';
+import Close from '@/assets/icons/monochrome/Close.svg';
 
 const firstHalf = FaqData.slice(0, 4);
 const secondHalf = FaqData.slice(4);

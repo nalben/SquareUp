@@ -17,23 +17,45 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         type: 'asset/resource', };
 
 
-        const svgrLoader = {
+        const svgrLoaderMono = {
             test: /\.svg$/i,
-            include: path.resolve(__dirname, '../../src/assets/icons'),
-            use: [ { loader: '@svgr/webpack',
+            include: path.resolve(__dirname, '../../src/assets/icons/monochrome'),
+            use: [
+                {
+                loader: '@svgr/webpack',
                 options: {
                     icon: false,
                     svgoConfig: {
-                        plugins: [ {
-                            name: 'convertColors',
-                            params: {
-                                currentColor: true 
-                            }, 
-                        }, ],
-                    }, 
-                }, 
-            }, ], 
-        };
+                    plugins: [
+                        {
+                        name: 'convertColors',
+                        params: { currentColor: true }, // перекрашиваемые иконки
+                        },
+                    ],
+                    },
+                },
+                },
+            ],
+            };
+
+            const svgrLoaderColored = {
+            test: /\.svg$/i,
+            include: path.resolve(__dirname, '../../src/assets/icons/colored'),
+            use: [
+                {
+                loader: '@svgr/webpack',
+                options: {
+                    icon: false,
+                    svgoConfig: {
+                    plugins: [
+                        { name: 'convertColors', active: false }, // сохраняем исходные цвета
+                    ],
+                    },
+                },
+                },
+            ],
+            };
+
 
     const cssLoaderWithModules = {
         loader: "css-loader",
@@ -91,7 +113,8 @@ const scssLoader = {
 
     return [
         assetLoader,
-        svgrLoader,
+        svgrLoaderMono,
+        svgrLoaderColored,
         scssLoader,
         // tsLoader,
         BabelLoader,

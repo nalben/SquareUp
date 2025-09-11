@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Sectionblockbig.module.scss'
-import Logo from '@/assets/img/Logo2.png'
+import Logo from '@/assets/icons/colored/LogoSmall.svg'
 
 interface SectionBlockProps {
   title: string;
@@ -14,7 +14,7 @@ const Sectionblockbig: React.FC<SectionBlockProps> = ({ title, subtitle, backgro
   return (
     <div className={classes.section}>
       <div className={`${classes.backcon} border-content-block`} style={{ backgroundImage: `url(${background})` }}>
-        <img src={Logo} alt="logo" />
+        <Logo />
         <h1>{title}</h1>
         <h6>{subtitle}</h6>
         {button}

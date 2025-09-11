@@ -5,7 +5,7 @@
     align-items: center;
     text-align: center;
     text-wrap: balance;
-    & img{
+    & svg{
         max-width: fluid-prop(60, 50, 1440, 390);
     }
     & h1{
@@ -28,7 +28,7 @@
 @media (min-width:1440px) {
     .backcon {
         padding: fluid-prop(120, 100, 1920, 1440) fluid-prop(350, 250, 1920, 1440);
-        & img{
+        & svg{
             max-width: fluid-prop(80, 60, 1920, 1440);
         }
         & h1{
