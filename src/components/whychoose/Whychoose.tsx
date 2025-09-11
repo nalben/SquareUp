@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionBlock from '../sectionblock/Sectionblock';
 import back from '@/assets/img/backwhy.png'
 import classes from './Whychoose.module.scss'
 import Whychoosecard from './whychoosecard/Whychoosecard';
+import SectionBlock from '../_UI/sectionblock/Sectionblock';
 
 const Ourservices = () => {
     return (

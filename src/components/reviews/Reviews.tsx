@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionBlock from '../sectionblock/Sectionblock';
 import back from '@/assets/img/backgroundreviews.png'
 import Reviewscard from './reviewscard/Reviewscard';
 import classes from './Reviews.module.scss'
+import SectionBlock from '../_UI/sectionblock/Sectionblock';
 
 const Reviews = () => {
     return (

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 interface MainbtnProps {
     text: string;
     href: string;
-    variant?: 'accent' | 'accentBig' | 'blur';
+    variant?: 'accent' | 'accentBig' | 'accentSuperBig' | 'blur';
 }
 
 const Mainbtn: React.FC<MainbtnProps> = ({ text, href, variant = 'accent' }) => {

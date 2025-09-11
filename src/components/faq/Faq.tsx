@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionBlock from '../sectionblock/Sectionblock';
 import classes from './Faq.module.scss'
 import back from '@/assets/img/backfaq.png'
 import Faqaccordion from './faqaccordion/Faqaccordion';
+import SectionBlock from '../_UI/sectionblock/Sectionblock';
 
 const Faq = () => {
     return (

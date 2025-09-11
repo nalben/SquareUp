@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionBlock from '../sectionblock/Sectionblock';
 import back from '@/assets/img/servicesback.png'
 import Servicescard from './servicescard/Servicescard';
 import classes from './Ourservices.module.scss'
+import SectionBlock from '../_UI/sectionblock/Sectionblock';
 
 const Ourservices = () => {
     return (
