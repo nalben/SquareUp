@@ -17,44 +17,44 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         type: 'asset/resource', };
 
 
-        const svgrLoaderMono = {
-            test: /\.svg$/i,
-            include: path.resolve(__dirname, '../../src/assets/icons/monochrome'),
-            use: [
-                {
-                loader: '@svgr/webpack',
-                options: {
-                    icon: false,
-                    svgoConfig: {
-                    plugins: [
-                        {
-                        name: 'convertColors',
-                        params: { currentColor: true }, // перекрашиваемые иконки
-                        },
-                    ],
+    const svgrLoaderMono = {
+        test: /\.svg$/i,
+        include: path.resolve(__dirname, '../../src/assets/icons/monochrome'),
+        use: [
+            {
+            loader: '@svgr/webpack',
+            options: {
+                icon: false,
+                svgoConfig: {
+                plugins: [
+                    {
+                    name: 'convertColors',
+                    params: { currentColor: true }, // перекрашиваемые иконки
                     },
+                ],
                 },
-                },
-            ],
-            };
+            },
+            },
+        ],
+    };
 
-            const svgrLoaderColored = {
-            test: /\.svg$/i,
-            include: path.resolve(__dirname, '../../src/assets/icons/colored'),
-            use: [
-                {
-                loader: '@svgr/webpack',
-                options: {
-                    icon: false,
-                    svgoConfig: {
-                    plugins: [
-                        { name: 'convertColors', active: false }, // сохраняем исходные цвета
-                    ],
-                    },
+    const svgrLoaderColored = {
+        test: /\.svg$/i,
+        include: path.resolve(__dirname, '../../src/assets/icons/colored'),
+        use: [
+            {
+            loader: '@svgr/webpack',
+            options: {
+                icon: false,
+                svgoConfig: {
+                plugins: [
+                    { name: 'convertColors', active: false }, // сохраняем исходные цвета
+                ],
                 },
-                },
-            ],
-            };
+            },
+            },
+        ],
+    };
 
 
     const cssLoaderWithModules = {
@@ -66,48 +66,40 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         },
     };
 
-const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-        isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-        cssLoaderWithModules,
-        {
-            loader: 'sass-loader',
-            options: {
-                additionalData: (content: string, loaderContext: LoaderContext<any>) => {
-                const skipFiles = ['functions.scss'];
-                if (skipFiles.some(f => loaderContext.resourcePath.endsWith(f))) {
-                    return content;
-                }
-
-                return `
-                    @import "@/styles/functions.scss";
-                    ${content}
-                `;
-            },
-            },
-        },
-    ],
-};
-
-
-
-
-    const tsLoader = {
-        exclude: /node_modules/,
-        test: /\.tsx?$/,
+    const scssLoader = {
+        test: /\.s[ac]ss$/i,
         use: [
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            cssLoaderWithModules,
             {
-                loader: 'ts-loader',
+                loader: 'sass-loader',
                 options: {
-                    transpileOnly: isDev,
-                    getCustomTransformers: () => ({
-                        before: [isDev && ReactRefreshTypescript()].filter(Boolean),
-                    }),
-                }
-            }
-        ]
+                    additionalData: (content: string, loaderContext: LoaderContext<any>) => {
+                        const skipFiles = ['functions.scss'];
+                        if (skipFiles.some(f => loaderContext.resourcePath.endsWith(f))) {
+                            return content;
+                        }
+
+                        return `
+                            @import "@/styles/functions.scss";
+                            ${content}
+                        `;
+                    },
+                },
+            },
+        ],
     };
+
+    // новый loader для обычного CSS (node_modules)
+    const cssLoaderExternal = {
+        test: /\.css$/i,
+        exclude: path.resolve(__dirname, '../../src'), // исключаем свои локальные файлы
+        use: [
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader', // без модулей
+        ],
+    };
+
 
     const BabelLoader = buildBabelLoader(options);
 
@@ -116,7 +108,7 @@ const scssLoader = {
         svgrLoaderMono,
         svgrLoaderColored,
         scssLoader,
-        // tsLoader,
+        cssLoaderExternal,
         BabelLoader,
     ];
 }

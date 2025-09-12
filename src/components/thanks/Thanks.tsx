@@ -2,6 +2,7 @@ import React from 'react';
 import Sectionblockbig from '../_UI/sectionblockbig/Sectionblockbig';
 import back from '@/assets/img/backthanks.png'
 import Mainbtn from '../_UI/mainbtn/Mainbtn';
+import Form from '@/components/form/Form'
 
 const Thanks = () => {
     return (
@@ -11,6 +12,7 @@ const Thanks = () => {
         background={back}
         button={<Mainbtn variant="accentSuperBig" text="Start Project" href="/work"/>}
         >
+        <Form />
         </Sectionblockbig>
     );
 };

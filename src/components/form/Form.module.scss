@@ -1,0 +1,158 @@
+.form_con{
+    padding: fluid-prop(60, 24, 1440, 390);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: fluid-prop(40, 30, 1920, 1440);
+    margin: 0 auto;
+    max-width: fluid-prop(846, 358, 1440, 390);
+    border-inline: var(--border);
+    & .btn button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-weight: 500;
+    }
+    & .item{
+        background-color: var(--grey20-back);
+        padding: fluid-prop(30, 18, 1440, 390) fluid-prop(30, 24, 1440, 390);
+        border-radius: 8px;
+        border: 1px var(--grey15) solid;
+        & h4{
+            font-weight: 500;
+            line-height: 150%;
+            color: var(--white);
+            font-size: fluid-prop(18, 16, 1440, 390);
+            margin-bottom: fluid-prop(16, 14, 1440, 390);
+        }
+        & h5{
+            line-height: 150%;
+            margin-bottom: fluid-prop(30, 24, 1440, 390);
+            font-size: fluid-prop(16, 14, 1440, 390);
+            color: var(--grey90);
+        }
+        & input{
+            background-color: transparent;
+            border-bottom: var(--border);
+            padding-bottom: 6px;
+            font-size: fluid-prop(18, 16, 1920, 1440);
+            line-height: 150%;
+            caret-color: var(--grey90);
+            color: var(--grey90);
+            &::placeholder{
+                color: var(--grey40);
+            }
+        }
+        &.range {
+            & input {
+                width: 100%;
+            }
+        }
+        & .check_con{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            @media (min-width:770px) {
+                grid-template-columns: 1fr 1fr;
+            }
+            & .input_con{
+                display: flex;
+                align-items: center;
+                height: 28px;
+                position: relative;
+                color: var(--green99);
+            }
+            & label{
+                cursor: pointer;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 38px;
+                & input{
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                }
+                & input:checked ~ span{
+                    &::after{
+                        display: block;
+                    }
+                }
+                & input:hover ~ span{
+                    background-color: var(--grey50);
+                }
+                & span{
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 28px;
+                    height: 28px;
+                    background-color: var(--grey15);
+                    border-radius: 5px;
+                    border: 1px var(--grey20) solid;
+                    &::after{
+                        left: 10px;
+                        top: 3.5px;
+                        width: 7px;
+                        height: 15px;
+                        border: solid var(--green50);
+                        border-width: 0 3px 3px 0;
+                        border-radius: 1px;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                }
+            }
+        }
+        &.text{
+            & input{
+                width: 100%;
+            }
+        }
+    }
+}
+@media (min-width:900px) {
+    .form_con{
+        grid-template-columns: 1fr 1fr;
+        & .check {
+            grid-column: span 2;
+        }
+    
+        & .range {
+            grid-column: span 2;
+        }
+    
+        & .message {
+            grid-column: span 2;
+        }
+        & .btn {
+            width: 100%;
+            grid-column: span 2;
+            & button{
+                width: fit-content;
+            }
+        }
+    }
+}
+@media (min-width:1440px) {
+    .form_con{
+        padding: fluid-prop(80, 60, 1920, 1440);
+        max-width: fluid-prop(1060, 846, 1920, 1440);
+        & .item{
+            & h4{
+                font-size: fluid-prop(22, 18, 1920, 1440);
+                margin-bottom: fluid-prop(20, 16, 1920, 1440);
+            }
+            & h5{
+                margin-bottom: fluid-prop(40, 30, 1920, 1440);
+                font-size: fluid-prop(18, 16, 1920, 1440);
+            }
+        }
+    }
+}

@@ -20,7 +20,38 @@
     --grey60: #98989A;
     --grey90: #E6E6E6;
 
-
     --grey20-opacity: #24242433;
+    --grey20-back: #24242480;
     --border: 1px var(--grey15) solid;
+}
+:global(.range-slider__thumb) {
+  width: fluid-prop(32, 20, 1920, 1440) !important;
+  height: fluid-prop(32, 20, 1920, 1440) !important;
+  border-radius: 50%;
+  background-color: var(--green50) !important;
+  border: fluid-prop(8, 4, 1920, 390) solid var(--grey40);
+  cursor: grab;
+  position: relative;
+}
+:global(.range-slider__range) {
+    background: var(--green50) !important;
+    height: 5px !important; 
+}
+:global(.range-slider ) {
+    height: 5px !important;
+    background: var(--grey20) !important;
+}
+:global(.range-slider__thumb)::after {
+    content: "$" attr(aria-valuenow);
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: fluid-prop(16, 14, 1920, 1440);
+    font-weight: 500;
+    color: var(--white);
+    /* или другой цвет, если нужно */
+    white-space: nowrap;
+    pointer-events: none;
+    /* чтобы не мешало drag */
 }
