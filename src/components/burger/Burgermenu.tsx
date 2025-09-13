@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classes from './BurgerMenu.module.scss';
-import burger from '@/assets/img/Burger.png';
+import Burger from '@/assets/icons/colored/burger.svg';
 import Navbar from '../navbar/Navbar';
 
 const Burgermenu = () => {
@@ -38,7 +38,7 @@ const Burgermenu = () => {
                     setIsOpen(!isOpen);
                 }}
             >
-                <img src={burger} alt="burger menu" />
+                <Burger />
             </a>
             <div ref={menuRef} className={`${classes.menu} ${isOpen ? classes.open : ''}`}>
                 <Navbar direction="column" onLinkClick={() => setIsOpen(false)} />
