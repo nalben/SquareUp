@@ -5,7 +5,9 @@
     gap: fluid-prop(40, 30, 1920, 1440);
     margin: 0 auto;
     max-width: fluid-prop(846, 358, 1440, 390);
-    border-inline: var(--border);
+    @media (min-width:900px) {
+        border-inline: var(--border);
+    }
     & .btn button{
         display: flex;
         align-items: center;

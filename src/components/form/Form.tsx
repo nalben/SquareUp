@@ -66,6 +66,7 @@ const Form: React.FC = () => {
   };
 
   return (
+    <div className={`${classes.cardscon} border-content-block`}>
     <form className={classes.form_con} onSubmit={handleSubmit} id="contactForm">
       <div className={`${classes.text} ${classes.item}`}>
         <h4>Full Name</h4>
@@ -138,6 +139,7 @@ const Form: React.FC = () => {
         <Mainbtn variant="accentSuperBig" text="Submit" href="" type="submit" />
       </center>
     </form>
+    </div>
   );
 };
 
