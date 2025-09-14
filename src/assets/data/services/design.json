@@ -1,0 +1,29 @@
+[
+    {
+        "title": "User Experience (UX) Design",
+        "cards": [
+        { "icon": "Windows", "text": "User Research and Persona Development" },
+        { "icon": "Pkm", "text": "Information Architecture and Wireframing" },
+        { "icon": "Radar", "text": "Interactive Prototyping and User Testing" },
+        { "icon": "Sizestars", "text": "UI Design and Visual Branding" }
+        ]
+    },
+    {
+        "title": "User Interface (UI) Design",
+        "cards": [
+        { "icon": "Cursor", "text": "Intuitive and Visually Appealing Interface Design" },
+        { "icon": "Clock", "text": "Custom Iconography and Illustration" },
+        { "icon": "Feather", "text": "Typography and Color Palette Selection" },
+        { "icon": "Blocksize", "text": "Responsive Design for Various Devices" }
+        ]
+    },
+    {
+        "title": "Branding and Identity",
+        "cards": [
+        { "icon": "Bug", "text": "Logo Design and Visual Identity Development" },
+        { "icon": "Square", "text": "Brand Strategy and Positioning" },
+        { "icon": "Triangle", "text": "Brand Guidelines and Style Guides" },
+        { "icon": "Book", "text": "Marketing Collateral Design (Brochures, Business Cards, etc.)" }
+        ]
+    }
+]
