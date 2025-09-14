@@ -12,7 +12,6 @@ const Ideas = () => {
         background={back}
         button={<Mainbtn variant="accentSuperBig" text="Start Project" href="/work"/>}
         >
-        <Form />
         </Sectionblockbig>
     );
 };
