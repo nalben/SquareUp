@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Project Planning and Scoping",
+        "cards": [
+        { "icon": "Download", "text": "Requirements Gathering and Analysis" },
+        { "icon": "Internet", "text": "Project Roadmap and Timeline Development" },
+        { "icon": "Zoomit", "text": "Resource Allocation and Task Assignment" },
+        { "icon": "Internet", "text": "Risk Assessment and Mitigation Strategies" }
+        ]
+    },
+    {
+        "title": "Agile Development",
+        "cards": [
+        { "icon": "Cases", "text": "Iterative Development and Sprints" },
+        { "icon": "Coins2", "text": "Scrum or Kanban Methodology Implementation" },
+        { "icon": "Case", "text": "Regular Progress Updates and Demos" },
+        { "icon": "Magic", "text": "Continuous Improvement and Feedback Incorporation" }
+        ]
+    },
+    {
+        "title": "Quality Assurance and Testing",
+        "cards": [
+        { "icon": "Puzzle2", "text": "Test Planning and Execution" },
+        { "icon": "Shield2", "text": "Functional and Usability Testing" },
+        { "icon": "Graph", "text": "Performance and Security Testing" },
+        { "icon": "Wrench", "text": "Bug Tracking and Issue Resolution" }
+        ]
+    }
+]

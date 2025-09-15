@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Web Development",
+        "cards": [
+        { "icon": "Tag", "text": "Front-End Development (HTML, CSS, JavaScript)" },
+        { "icon": "Code", "text": "Back-End Development (PHP, Python, Ruby)" },
+        { "icon": "Peace", "text": "Content Management System (CMS) Development (WordPress, Drupal)" },
+        { "icon": "Ring", "text": "E-Commerce Platform Development (Magento, Shopify)" }
+        ]
+    },
+    {
+        "title": "Mobile App Development",
+        "cards": [
+        { "icon": "Phone", "text": "Native iOS and Android App Development" },
+        { "icon": "Tophone", "text": "Cross-Platform App Development (React Native, Flutter)" },
+        { "icon": "Click", "text": "App Prototyping and UI/UX Design Integration" },
+        { "icon": "Braille", "text": "App Testing, Deployment, and Maintenance" }
+        ]
+    },
+    {
+        "title": "Custom Software Development",
+        "cards": [
+        { "icon": "Dotted", "text": "Enterprise Software Development" },
+        { "icon": "Screenstar", "text": "Custom Web Application Development" },
+        { "icon": "Newblock", "text": "Integration with Third-Party APIs and Systems" },
+        { "icon": "Coins", "text": "Legacy System Modernization and Migration" }
+        ]
+    }
+]
