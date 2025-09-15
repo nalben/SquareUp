@@ -15,13 +15,22 @@ container.render(
     <HashRouter>
         <Routes>
             <Route path="/" element={<App />}>
-                <Route path="*" element={<Navigate to="/home" replace />} />
-                <Route index element={<Suspense fallback={<HomeSkeleton />}><LazyHome /></Suspense>} />
-                <Route path="home" element={<Suspense fallback={<HomeSkeleton />}><LazyHome /></Suspense>} />
-                <Route path="services" element={<Suspense fallback={<HomeSkeleton />}><LazyServices /></Suspense>} />
+            <Route index element={<Navigate to="/home" replace />} />
+            <Route path="home" element={
+                <Suspense fallback={<HomeSkeleton />}>
+                <LazyHome />
+                </Suspense>
+            } />
+            <Route path="services" element={
+                <Suspense fallback={<HomeSkeleton />}>
+                <LazyServices />
+                </Suspense>
+            } />
+            <Route path="*" element={<Navigate to="/home" replace />} />
             </Route>
         </Routes>
     </HashRouter>
+
 );
 
 
