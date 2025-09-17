@@ -66,7 +66,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className={`${classes.cardscon} border-content-block`}>
+    <div className={`${classes.cardscon}`}>
     <form className={classes.form_con} onSubmit={handleSubmit} id="contactForm">
       <div className={`${classes.text} ${classes.item}`}>
         <h4>Full Name</h4>

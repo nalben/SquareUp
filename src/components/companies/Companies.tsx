@@ -6,7 +6,7 @@ import Iconbox from '../_UI/iconbox/Iconbox';
 const Companies = () => {
     return (
 
-        <div className={`${classes.companies} border-content-block`}>
+        <div className={`${classes.companies}`}>
             <div className={classes.companies_con}>
                 {companiesData.map((item) => (
                 <div key={item.icon} className={classes.link_con}>

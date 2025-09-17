@@ -13,7 +13,7 @@ interface SectionBlockProps {
 const Sectionblockbig: React.FC<SectionBlockProps> = ({ title, subtitle, background, button, children }) => {
   return (
     <div className={classes.section}>
-      <div className={`${classes.backcon} border-content-block`} style={{ backgroundImage: `url(${background})` }}>
+      <div className={`${classes.backcon}`} style={{ backgroundImage: `url(${background})` }}>
         <Logo />
         <h1>{title}</h1>
         <h6>{subtitle}</h6>

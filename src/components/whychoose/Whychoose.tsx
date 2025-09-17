@@ -7,7 +7,7 @@ import SectionBlock from '../_UI/sectionblock/Sectionblock';
 const Ourservices = () => {
     return (
       <SectionBlock title="Why Choose SquareUp?" subtitle="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results." background={back} >
-        <div className={`${classes.cardscon} border-content-block`}>
+        <div className={`${classes.cardscon}`}>
             <Whychoosecard />
         </div>
       </SectionBlock>

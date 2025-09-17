@@ -13,7 +13,7 @@ const Home = () => {
 
 
     return (
-        <div className={classes.home}>
+        <div className={`${classes.home} border-content-block`}>
             <Hero />
             <Companies />
             <Ourservices />

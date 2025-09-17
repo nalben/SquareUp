@@ -9,7 +9,7 @@ import Projectmanagement from '@/components/projectmanagement/Projectmanagement'
 const Services = () => {
 
     return (
-        <div className={classes.services}>
+        <div className={`${classes.services} border-content-block`}>
             <Ourservices2 />
             <Servicesdesign />
             <Engineering />

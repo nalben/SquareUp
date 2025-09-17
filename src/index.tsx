@@ -6,6 +6,9 @@ import { Suspense } from "react";
 import { LazyHome } from "@/pages/home/Home.lazy";
 import HomeSkeleton from "./pages/home/HomeSkeleton";
 import { LazyServices } from "./pages/services/services.Lazy";
+import ServicesSkeleton from './pages/services/ServicesSkeleton';
+import WorkSkeleton from './pages/work/WorkSkeleton';
+import { LazyWork } from './pages/work/Work.Lazy';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('root not found');
@@ -22,8 +25,13 @@ container.render(
                 </Suspense>
             } />
             <Route path="services" element={
-                <Suspense fallback={<HomeSkeleton />}>
+                <Suspense fallback={<ServicesSkeleton />}>
                 <LazyServices />
+                </Suspense>
+            } />
+            <Route path="work" element={
+                <Suspense fallback={<WorkSkeleton />}>
+                <LazyWork />
                 </Suspense>
             } />
             <Route path="*" element={<Navigate to="/home" replace />} />

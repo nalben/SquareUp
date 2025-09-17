@@ -6,7 +6,7 @@ import classes from './Projectmanagement.module.scss'
 
 const Projectmanagement = () => {
   return (
-    <div className={`${classes.cardscon} border-content-block`}>
+    <div className={`${classes.cardscon}`}>
         <Iconsstructure
         title="Project Management"
         paragraph="Our experienced project management team ensures that your projects are delivered on time, within budget, and according to your specifications. We follow industry-standard methodologies and employ effective communication and collaboration tools to keep you informed throughout the development process."
