@@ -2,38 +2,35 @@ import path from 'path';
 import { ModuleOptions } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/types';
-import ReactRefreshTypescript from 'react-refresh-typescript';
-import { buildBabelLoader } from './babel/buildBabelLoader';
 import { LoaderContext } from 'webpack';
+import { buildBabelLoader } from './babel/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
-
     const isDev = options.mode === 'development';
 
-    const path = require('path');
-
-    const assetLoader = { test: /\.(png|jpe?g|gif|svg)$/i, 
+    // --- Ассет для изображений (PNG/JPG/GIF) ---
+    // На проде файлы будут конвертированы в WebP плагином, overrideExtension: true
+    const assetLoader = {
+        test: /\.(png|jpe?g|gif)$/i, 
         include: path.resolve(__dirname, '../../src/assets/img'),
-        type: 'asset/resource', };
+        type: 'asset/resource',
+    };
 
-
+    // --- SVG через SVGR ---
     const svgrLoaderMono = {
         test: /\.svg$/i,
         include: path.resolve(__dirname, '../../src/assets/icons/monochrome'),
         use: [
             {
-            loader: '@svgr/webpack',
-            options: {
-                icon: false,
-                svgoConfig: {
-                plugins: [
-                    {
-                    name: 'convertColors',
-                    params: { currentColor: true }, // перекрашиваемые иконки
+                loader: '@svgr/webpack',
+                options: {
+                    icon: false,
+                    svgoConfig: {
+                        plugins: [
+                            { name: 'convertColors', params: { currentColor: true } },
+                        ],
                     },
-                ],
                 },
-            },
             },
         ],
     };
@@ -43,25 +40,23 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         include: path.resolve(__dirname, '../../src/assets/icons/colored'),
         use: [
             {
-            loader: '@svgr/webpack',
-            options: {
-                icon: false,
-                svgoConfig: {
-                plugins: [
-                    { name: 'convertColors', active: false }, // сохраняем исходные цвета
-                ],
+                loader: '@svgr/webpack',
+                options: {
+                    icon: false,
+                    svgoConfig: {
+                        plugins: [{ name: 'convertColors', active: false }],
+                    },
                 },
-            },
             },
         ],
     };
 
-
+    // --- SCSS/CSS ---
     const cssLoaderWithModules = {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
             modules: {
-                localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
+                localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
             },
         },
     };
@@ -79,7 +74,6 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
                         if (skipFiles.some(f => loaderContext.resourcePath.endsWith(f))) {
                             return content;
                         }
-
                         return `
                             @import "@/styles/functions.scss";
                             ${content}
@@ -99,13 +93,13 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ],
     };
 
-
+    // --- Babel ---
     const BabelLoader = buildBabelLoader(options);
 
     return [
-        assetLoader,
-        svgrLoaderMono,
-        svgrLoaderColored,
+        assetLoader,       // PNG/JPG/GIF
+        svgrLoaderMono,    // SVG monochrome
+        svgrLoaderColored, // SVG colored
         scssLoader,
         cssLoaderExternal,
         BabelLoader,

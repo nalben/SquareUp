@@ -1,6 +1,6 @@
-import webpack, {Configuration, DefinePlugin} from 'webpack';
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack, { Configuration, DefinePlugin } from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/types';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
@@ -9,39 +9,46 @@ import path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 
-
-export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): Configuration['plugins']{
+export function buildPlugins({ mode, paths, analyzer, platform }: BuildOptions): Configuration['plugins'] {
     const isDev = mode === 'development';
     const isProd = mode === 'production';
 
     const plugins: Configuration['plugins'] = [
-        new HtmlWebpackPlugin({template: paths.html, favicon: path.resolve(paths.public, 'Logo.svg') }),
+        new HtmlWebpackPlugin({ template: paths.html, favicon: path.resolve(paths.public, 'Logo.svg') }),
         new DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),
             __ENV__: JSON.stringify(mode),
         })
-    ]
+    ];
 
-    if(isDev){
+    if (isDev) {
         plugins.push(new webpack.ProgressPlugin());
         plugins.push(new ForkTsCheckerWebpackPlugin());
         plugins.push(new ReactrefreshWebpackPlugin());
     }
 
-    if(isProd){
+    if (isProd) {
         plugins.push(
             new MiniCssExtractPlugin({
                 filename: 'css/[name].[contenthash:8].css',
                 chunkFilename: 'css/[name].[contenthash:8].css',
             })
         );
+
         // <-- добавляем плагин для WebP
-        plugins.push(new ImageminWebpWebpackPlugin({
-            quality: 75
-        }));
+        plugins.push(
+            new ImageminWebpWebpackPlugin({
+                config: [{
+                    test: /\.(jpe?g|png|gif)$/i,
+                    options: { quality: 75 },
+                }],
+                overrideExtension: true, // заменяем все исходные расширения на .webp
+                detailedLogs: true,      // для логов генерации
+            })
+        );
     }
 
-    if(analyzer) {
+    if (analyzer) {
         plugins.push(new BundleAnalyzerPlugin());
     }
 
