@@ -10,10 +10,14 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
     // --- Ассет для изображений (PNG/JPG/GIF) ---
     // На проде файлы будут конвертированы в WebP плагином, overrideExtension: true
-    const assetLoader = {
-        test: /\.(png|jpe?g|gif)$/i, 
+        const assetLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
         include: path.resolve(__dirname, '../../src/assets/img'),
         type: 'asset/resource',
+        generator: {
+            // все изображения будут с расширением .webp
+            filename: 'img/[name].[contenthash:8].webp',
+        },
     };
 
     // --- SVG через SVGR ---
