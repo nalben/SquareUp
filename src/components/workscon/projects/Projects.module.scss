@@ -1,0 +1,20 @@
+.headline {
+    color: var(--grey60);
+    font-weight: 500;
+    font-size: fluid-prop(26, 20, 1920, 1440);
+    padding: fluid-prop(24, 20, 1440, 390) fluid-prop(40, 24, 1440, 390);
+    @media (min-width:1440px) {
+        padding: fluid-prop(30, 24, 1920, 1440) fluid-prop(50, 40, 1920, 1440);
+    }
+}
+.info{
+    padding: fluid-prop(30, 20, 1440, 390) fluid-prop(40, 24, 1440, 390);
+    & img{
+        border-radius: 12px;
+    }
+}
+.info_top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}

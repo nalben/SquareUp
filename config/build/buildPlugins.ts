@@ -6,8 +6,8 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactrefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import path from 'path';
-import CopyPlugin from 'copy-webpack-plugin'
-
+import CopyPlugin from 'copy-webpack-plugin';
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 
 
 export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): Configuration['plugins']{
@@ -23,24 +23,27 @@ export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): C
     ]
 
     if(isDev){
-        plugins.push(new webpack.ProgressPlugin()),
-        plugins.push(new ForkTsCheckerWebpackPlugin()),
-        plugins.push(new ReactrefreshWebpackPlugin())
+        plugins.push(new webpack.ProgressPlugin());
+        plugins.push(new ForkTsCheckerWebpackPlugin());
+        plugins.push(new ReactrefreshWebpackPlugin());
     }
 
     if(isProd){
-        plugins.push (new MiniCssExtractPlugin({
+        plugins.push(
+            new MiniCssExtractPlugin({
                 filename: 'css/[name].[contenthash:8].css',
                 chunkFilename: 'css/[name].[contenthash:8].css',
             })
-        )
+        );
+        // <-- добавляем плагин для WebP
+        plugins.push(new ImageminWebpWebpackPlugin({
+            quality: 75 // качество WebP
+        }));
     }
 
     if(analyzer) {
-        plugins.push(new BundleAnalyzerPlugin())
+        plugins.push(new BundleAnalyzerPlugin());
     }
-
-
 
     return plugins;
 }

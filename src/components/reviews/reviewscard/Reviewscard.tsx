@@ -1,19 +1,18 @@
-// Reviewscard.tsx
 import React from 'react';
 import ReviewsData from '@/assets/data/reviews/data.json';
 import classes from './Reviewscard.module.scss';
-import { getImage } from '@/utils/icons';
+import { getImage } from '@/utils/icons'; // getImage теперь сам проверяет webp
 
 const Reviewscard = () => {
   return (
     <>
       {ReviewsData.map((item, index) => {
-        const imgSrc = getImage(item.img);
+        const imgSrc = getImage(item.img); // вернёт .webp или оригинал
         return (
           <div key={index} className={classes.card}>
             <div className={classes.content}>
-                <h2>{item.headline}</h2>
-                <p>{item.content}</p>
+              <h2>{item.headline}</h2>
+              <p>{item.content}</p>
             </div>
             <div className={classes.author}>
               <div className={classes.author_left}>
@@ -23,7 +22,9 @@ const Reviewscard = () => {
                   <span>{item.position}</span>
                 </div>
               </div>
-              <a href={item.href} target="_blank" rel="noopener noreferrer">Open Website</a>
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                Open Website
+              </a>
             </div>
           </div>
         );

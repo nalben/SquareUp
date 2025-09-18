@@ -90,13 +90,12 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ],
     };
 
-    // новый loader для обычного CSS (node_modules)
     const cssLoaderExternal = {
         test: /\.css$/i,
-        exclude: path.resolve(__dirname, '../../src'), // исключаем свои локальные файлы
+        exclude: path.resolve(__dirname, '../../src'),
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader', // без модулей
+            'css-loader',
         ],
     };
 

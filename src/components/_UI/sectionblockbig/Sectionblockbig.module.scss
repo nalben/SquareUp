@@ -2,6 +2,9 @@
     padding: fluid-prop(100, 50, 1440, 390) fluid-prop(250, 16, 1440, 390);
     display: flex;
     flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     align-items: center;
     text-align: center;
     text-wrap: balance;
