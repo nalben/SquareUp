@@ -5,7 +5,7 @@ const reqIcons = (require as any).context('../assets/icons/monochrome/', false, 
 
 export type SvgIcon = React.FC<React.SVGProps<SVGSVGElement>>;
 
-// Контекст для картинок: сразу учитываем webp и оригиналы
+// Контекст для картинок: png/jpg/gif + webp
 const reqImages = (require as any).context('../assets/img', false, /\.(png|jpe?g|gif|webp)$/);
 
 export const icons: Record<string, SvgIcon> = {};
@@ -17,21 +17,20 @@ reqIcons.keys().forEach((key: string) => {
   icons[name] = reqIcons(key).default as SvgIcon;
 });
 
-// Загружаем пути к изображениям
+// Загружаем все картинки в images
 reqImages.keys().forEach((key: string) => {
+  // убираем расширение
   const name = key.replace('./', '').replace(/\.(png|jpe?g|gif|webp)$/, '');
+  // берём путь к файлу (с хэшами, если есть)
   images[name] = reqImages(key);
 });
 
+// Возвращает icon или image
 export function getAsset(
   name: string
 ): { type: 'icon' | 'image'; value: SvgIcon | string } | null {
-  if (icons[name]) {
-    return { type: 'icon', value: icons[name] };
-  }
-  if (images[name]) {
-    return { type: 'image', value: images[name] };
-  }
+  if (icons[name]) return { type: 'icon', value: icons[name] };
+  if (images[name]) return { type: 'image', value: images[name] };
   return null;
 }
 
@@ -39,15 +38,13 @@ export function getIcon(name: string): SvgIcon | null {
   return icons[name] ?? null;
 }
 
-// Возвращает webp, если есть, иначе оригинал
+// Возвращает путь к WebP, если он есть, иначе к оригиналу
 export function getImage(name: string): string | null {
-  const webpPath = `./${name}.webp`;
-  if (reqImages.keys().includes(webpPath)) {
-    return reqImages(webpPath);
+  const webpKey = `./${name}.webp`;
+  if (reqImages.keys().includes(webpKey)) {
+    return reqImages(webpKey); // WebP найден
   }
-  if (images[name]) {
-    return images[name];
-  }
+  if (images[name]) return images[name]; // fallback
   return null;
 }
 

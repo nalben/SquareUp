@@ -1,13 +1,13 @@
 import React from 'react';
 import ReviewsData from '@/assets/data/reviews/data.json';
 import classes from './Reviewscard.module.scss';
-import { getImage } from '@/utils/icons'; // getImage теперь сам проверяет webp
+import { getImage } from '@/utils/icons'; // динамический require с WebP fallback
 
 const Reviewscard = () => {
   return (
     <>
       {ReviewsData.map((item, index) => {
-        const imgSrc = getImage(item.img); // вернёт .webp или оригинал
+        const imgSrc = getImage(item.img); // отдаёт .webp, если есть
         return (
           <div key={index} className={classes.card}>
             <div className={classes.content}>

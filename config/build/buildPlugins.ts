@@ -37,8 +37,7 @@ export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): C
         );
         // <-- добавляем плагин для WebP
         plugins.push(new ImageminWebpWebpackPlugin({
-            quality: 75,
-            overrideExtension: true
+            quality: 75
         }));
     }
 
