@@ -8,19 +8,15 @@ import { buildBabelLoader } from './babel/buildBabelLoader';
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     const isDev = options.mode === 'development';
 
-    // --- Ассет для изображений (PNG/JPG/GIF) ---
-    // На проде файлы будут конвертированы в WebP плагином, overrideExtension: true
-        const assetLoader = {
-        test: /\.(png|jpe?g|gif)$/i,
+    const assetLoader = {
+        test: /\.(png|jpe?g|gif|webp)$/i,
         include: path.resolve(__dirname, '../../src/assets/img'),
         type: 'asset/resource',
         generator: {
-            // все изображения будут с расширением .webp
             filename: 'img/[name].[contenthash:8].webp',
         },
     };
 
-    // --- SVG через SVGR ---
     const svgrLoaderMono = {
         test: /\.svg$/i,
         include: path.resolve(__dirname, '../../src/assets/icons/monochrome'),
@@ -55,7 +51,6 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ],
     };
 
-    // --- SCSS/CSS ---
     const cssLoaderWithModules = {
         loader: 'css-loader',
         options: {
@@ -97,13 +92,12 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ],
     };
 
-    // --- Babel ---
     const BabelLoader = buildBabelLoader(options);
 
     return [
-        assetLoader,       // PNG/JPG/GIF
-        svgrLoaderMono,    // SVG monochrome
-        svgrLoaderColored, // SVG colored
+        assetLoader,
+        svgrLoaderMono,
+        svgrLoaderColored,
         scssLoader,
         cssLoaderExternal,
         BabelLoader,
