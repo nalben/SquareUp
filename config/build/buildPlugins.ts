@@ -42,10 +42,10 @@ plugins.push(
             implementation: ImageMinimizerPlugin.imageminMinify,
             options: {
                 plugins: [
-                    ['mozjpeg', { quality: 75 }],
+                    ['mozjpeg', { quality: 85 }],
                     ['pngquant', { quality: [0.7, 0.8] }],
                     ['gifsicle', { optimizationLevel: 2 }],
-                    ['imagemin-webp', { quality: 75 }]
+                    ['imagemin-webp', { quality: 85 }]
                 ],
             },
         },

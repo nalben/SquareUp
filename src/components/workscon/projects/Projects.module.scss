@@ -1,4 +1,16 @@
+.card{
+    padding-bottom: fluid-prop(80, 40, 1440, 390);
+    @media (min-width:1100px) {
+        &:nth-child(odd) {
+            border-right: var(--border);
+        }
+    }
+    @media (min-width:1440px) {
+        padding-bottom: fluid-prop(100, 80, 1920, 1440);
+    }
+}
 .headline {
+    border-block: var(--border);
     color: var(--grey60);
     font-weight: 500;
     font-size: fluid-prop(26, 20, 1920, 1440);
@@ -11,10 +23,71 @@
     padding: fluid-prop(30, 20, 1440, 390) fluid-prop(40, 24, 1440, 390);
     & img{
         border-radius: 12px;
+        min-width: 100%;
+    }
+    & p{
+        font-size: fluid-prop(16, 14, 1440, 390);
+        line-height: 150%;
+        color: var(--grey60);
+        margin-top: fluid-prop(24, 20, 1440, 390);
+    }
+    @media (min-width:1440px) {
+        & p{
+            font-size: fluid-prop(18, 16, 1920, 1440);
+            margin-top: fluid-prop(30, 24, 1920, 1440);
+        }
     }
 }
 .info_top{
+    margin-top: fluid-prop(24, 20, 1440, 390);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);;
+    & h2{
+        width: fit-content;
+        color: var(--grey90);
+        line-height: 150%;
+        font-weight: 500;
+        font-size: fluid-prop(24, 18, 1920, 1440);
+        min-width: 100%;
+    }
+    & h3{
+        color: var(--grey60);
+        display: block;
+        font-size: fluid-prop(16, 14, 1440, 390);
+        margin-top: 10px;
+        padding: fluid-prop(8, 8, 1440, 390) fluid-prop(12, 10, 1440, 390);
+        background-color: var(--grey15);
+        border-radius: 8px;
+        width: fit-content;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: fluid-prop(400, 150, 450, 320);
+    }
+    & a{
+        display: block;
+        align-items: center;
+        align-content: center;
+        transition: all 0.5s;
+        justify-self: end;
+        & svg{
+            padding: 10px;
+            transition: all 0.5s;
+            min-width: fluid-prop(54, 46, 1920, 1440);
+            min-height: fluid-prop(54, 46, 1920, 1440);
+            border-radius: 8px;
+            background-color: var(--grey15);
+            color: var(--green50);
+            &:hover{
+                opacity: 70%;
+            }
+        }
+    }
+    @media (min-width:1440px) {
+        margin-top: fluid-prop(30, 24, 1920, 1440);
+        & span{
+            font-size: fluid-prop(20, 16, 1920, 1440);
+            padding: fluid-prop(10, 8, 1920, 1440) fluid-prop(14, 12, 1920, 1440);
+        }
+    }
 }

@@ -28,8 +28,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className={classes.info}>
         {imgSrc && <img src={imgSrc} alt={project.title} />}
         <div className={classes.info_top}>
-          <h2>{project.name}</h2>
-          <span>{project.linkname}</span>
+          <div className={classes.info_con_left}>
+            <h2>{project.name}</h2>
+            <h3>{project.linkname}</h3>
+          </div>
           <NavLink to={project.href}>
             <Arrow />
           </NavLink>
