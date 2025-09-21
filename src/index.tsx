@@ -9,6 +9,14 @@ import { LazyServices } from "./pages/services/services.Lazy";
 import ServicesSkeleton from './pages/services/ServicesSkeleton';
 import WorkSkeleton from './pages/work/WorkSkeleton';
 import { LazyWork } from './pages/work/Work.Lazy';
+import { LazyProcess } from './pages/process/Process.Lazy';
+import ProcessSkeleton from './pages/process/ProcessSkeleton';
+import AboutSkeleton from './pages/about/AboutSkeleton';
+import { LazyAbout } from './pages/about/About.Lazy';
+import CareersSkeleton from './pages/careers/CareersSkeleton';
+import { LazyCareers } from './pages/careers/Careers.Lazy';
+import ContactusSkeleton from './pages/contactus/ContactusSkeleton';
+import { LazyContactus } from './pages/contactus/Contactus.Lazy';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('root not found');
@@ -32,6 +40,26 @@ container.render(
             <Route path="work" element={
                 <Suspense fallback={<WorkSkeleton />}>
                 <LazyWork />
+                </Suspense>
+            } />
+            <Route path="process" element={
+                <Suspense fallback={<ProcessSkeleton />}>
+                <LazyProcess />
+                </Suspense>
+            } />
+            <Route path="about" element={
+                <Suspense fallback={<AboutSkeleton />}>
+                <LazyAbout />
+                </Suspense>
+            } />
+            <Route path="careers" element={
+                <Suspense fallback={<CareersSkeleton />}>
+                <LazyCareers />
+                </Suspense>
+            } />
+            <Route path="contact" element={
+                <Suspense fallback={<ContactusSkeleton />}>
+                <LazyContactus />
                 </Suspense>
             } />
             <Route path="*" element={<Navigate to="/home" replace />} />
