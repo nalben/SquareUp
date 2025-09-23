@@ -7,7 +7,7 @@ const Reviewscard = () => {
   return (
     <>
       {ReviewsData.map((item, index) => {
-        const imgSrc = getImage(item.img); // вернёт WebP на проде, PNG/JPG на dev
+        const imgSrc = getImage(item.img);
 
         return (
           <div key={index} className={classes.card}>
