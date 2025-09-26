@@ -8,11 +8,11 @@ const Block: React.FC = () => {
         <div className={classes.container}>
             {data.map((item, index) => (
                 <div key={index} className={classes.con}>
-                <div className={classes.head_con}>
-                    <h1>{item.number}</h1>
-                    <span>{item.headline}</span>
-                </div>
-                <p>{item.text}</p>
+                  <div className={classes.head_con}>
+                      <h1>{item.number}</h1>
+                      <span>{item.headline}</span>
+                  </div>
+                  <p>{item.text}</p>
                 </div>
             ))}
         </div>
