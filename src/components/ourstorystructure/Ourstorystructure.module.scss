@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    & h2{
+        border-block: var(--border);
+        color: var(--white);
+        font-weight: 600;
+        font-size: fluid-prop(48,38,1440,390);
+        padding-inline: fluid-prop(50,24,1440,390);
+        padding-block: fluid-prop(80,40,1440,390);
+    }
+    @media (min-width:1440px) {
+        & h2{
+            font-size: fluid-prop(58,48,1920,1440);
+            padding-block: fluid-prop(100,80,1920,1440);
+        }
+    }
+}

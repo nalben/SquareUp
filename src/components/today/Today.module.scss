@@ -1,0 +1,104 @@
+.container{
+    padding-inline: fluid-prop(60,24,1440,390);
+    padding-block: fluid-prop(60,40,1440,390);
+    display: flex;
+    flex-direction: column;
+    gap: fluid-prop(40,30,1440,390);
+    @media (min-width:1440px) {
+        padding-block: fluid-prop(80,60,1920,1440);
+        padding-inline: fluid-prop(80,60,1920,1440);
+        gap: fluid-prop(50,40,1920,1440);
+    }
+}
+.top{
+    display: flex;
+    align-items: center;
+    gap: fluid-prop(30,24,1440,390);
+    flex-direction: column;
+    & svg{
+        min-width: fluid-prop(100,80,1440,390);
+        max-width: fluid-prop(100,80,1440,390);
+    }
+    @media (min-width:1440px) {
+        gap: fluid-prop(40,30,1920,1440);
+        & svg{
+            min-width: fluid-prop(150,100,1920,1440);
+            max-width: fluid-prop(150,100,1920,1440);
+        }
+    }
+    @media (min-width:700px) {
+        flex-direction: row;
+    }
+}
+.headline{
+    display: flex;
+    flex-direction: column;
+    text-wrap: balance;
+    text-align: center;
+    gap: fluid-prop(14,10,1440,390);
+    & h3{
+        color: var(--grey60);
+        font-weight: 500;
+        font-size: fluid-prop(24,20,1440,390);
+    }
+    & p{
+        color: var(--grey60);
+        line-height: 150%;
+        font-size: fluid-prop(16,14,1440,390);
+    }
+    @media (min-width:1440px) {
+        gap: fluid-prop(20,14,1920,1440);
+        & h3{
+            font-size: fluid-prop(30,24,1920,1440);
+        }
+        & p{
+            font-size: fluid-prop(18,16,1920,1440);
+        }
+    }
+    @media (min-width:700px) {
+        text-wrap: auto;
+        text-align: start;
+    }
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--grey15-opacity);
+    border: var(--border);
+    border-radius: 12px;
+    padding-block: fluid-prop(24,20,1920,1440);
+    padding-inline: fluid-prop(30,20,1440,390);
+    & h3{
+        color: var(--grey60);
+        font-size: fluid-prop(20,18,1920,1440);
+    }
+    & span{
+        color: var(--white);
+        line-height: 150%;
+        font-size: fluid-prop(20,16,1920,1440);
+        padding-block: fluid-prop(14,10,1920,1440);
+        padding-inline: fluid-prop(20,14,1920,1440);
+        border-radius: 8px;
+        background-color: var(--grey15);
+        margin-top: 14px;
+        margin-bottom: 20px;
+    }
+    & a{
+        width: 100%;
+        justify-content: center;
+    }
+    @media (min-width:1440px) {
+        padding-inline: fluid-prop(30,20,1920,1440);
+        flex-direction: row;
+        & span{
+            margin: 0px;
+            margin-left: fluid-prop(20,14,1920,1440);
+            margin-right: auto;
+        }
+        & a{
+            width: auto
+        }
+    }
+}
