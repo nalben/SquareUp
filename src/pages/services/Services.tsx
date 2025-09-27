@@ -1,11 +1,11 @@
 
 import React from 'react';
 import classes from './Services.module.scss'
-import Ourservices2 from '@/components/ourservices2/Ourservices';
-import Servicesdesign from '@/components/servicesdesign/Servicesdesign';
-import Ideas from '@/components/ideas/Ideas';
-import Engineering from '@/components/engineering/Engineering';
-import Projectmanagement from '@/components/projectmanagement/Projectmanagement';
+import Ourservices2 from '@/components/_services/ourservices2/Ourservices';
+import Ideas from '@/components/__general/ideas/Ideas';
+import Projectmanagement from '@/components/_services/projectmanagement/Projectmanagement';
+import Engineering from '@/components/_home/engineering/Engineering';
+import Servicesdesign from '@/components/_services/servicesdesign/Servicesdesign';
 const Services = () => {
 
     return (

@@ -1,13 +1,13 @@
 import React from 'react';
 import classes from './About.module.scss';
-import Aboutus from '@/components/aboutus/Aboutus';
-import Ourstory from '@/components/ourstory/Ourstory';
+import Ourstorystructure from '@/components/_about/ourstorystructure/Ourstorystructure';
+import Aboutus from '@/components/_about/aboutus/Aboutus';
 
 const About = () => {
   return (
     <div className={`${classes.About} border-content-block`}>
       <Aboutus />
-      <Ourstory />
+      <Ourstorystructure />
     </div>
   );
 };

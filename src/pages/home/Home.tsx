@@ -1,12 +1,13 @@
-import Companies from '@/components/companies/Companies';
-import Hero from '@/components/hero/Hero';
+import Hero from '@/components/_home/hero/Hero';
 import classes from './Home.module.scss'
 import React from 'react';
-import Ourservices from '@/components/ourservices/Ourservices';
-import Whychoose from '@/components/whychoose/Whychoose'
-import Reviews from '@/components/reviews/Reviews';
-import Faq from '@/components/faq/Faq';
-import Thanks from '@/components/thanks/Thanks';
+import Companies from '@/components/_home/companies/Companies';
+import Ourservices from '@/components/_home/ourservices/Ourservices';
+import Whychoose from '@/components/_home/whychoose/Whychoose';
+import Reviews from '@/components/_home/reviews/Reviews';
+import Faq from '@/components/__general/faq/Faq';
+import Thanks from '@/components/__general/thanks/Thanks';
+
 
 const Home = () => {
 

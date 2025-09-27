@@ -1,9 +1,9 @@
 
 import React from 'react';
 import classes from './Work.module.scss'
-import Ourworks from '@/components/ourworks/Ourworks';
-import Ideas from '@/components/ideas/Ideas';
-import Workscon from '@/components/workscon/Workscon';
+import Ourworks from '@/components/_work/ourworks/Ourworks';
+import Ideas from '@/components/__general/ideas/Ideas';
+import Workscon from '@/components/_work/workscon/Workscon';
 const Work = () => {
 
     return (

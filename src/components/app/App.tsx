@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import classes from './App.module.scss';
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import Header from '../__general/header/Header';
 import "@/styles/general.scss";
 import "@/styles/fonts.scss";
 import "@/styles/variables.scss";
+import Footer from '../__general/footer/Footer';
 
 
 
