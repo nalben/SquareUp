@@ -15,8 +15,8 @@ import AboutSkeleton from './pages/about/AboutSkeleton';
 import { LazyAbout } from './pages/about/About.Lazy';
 import CareersSkeleton from './pages/careers/CareersSkeleton';
 import { LazyCareers } from './pages/careers/Careers.Lazy';
-import ContactusSkeleton from './pages/contactus/ContactusSkeleton';
-import { LazyContactus } from './pages/contactus/Contactus.Lazy';
+import ContactSkeleton from './pages/contact/ContactSkeleton';
+import { LazyContact } from './pages/contact/Contact.Lazy';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('root not found');
@@ -58,8 +58,8 @@ container.render(
                 </Suspense>
             } />
             <Route path="contact" element={
-                <Suspense fallback={<ContactusSkeleton />}>
-                <LazyContactus />
+                <Suspense fallback={<ContactSkeleton />}>
+                <LazyContact />
                 </Suspense>
             } />
             <Route path="*" element={<Navigate to="/home" replace />} />

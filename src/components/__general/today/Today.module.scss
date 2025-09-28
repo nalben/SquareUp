@@ -3,6 +3,7 @@
     padding-block: fluid-prop(60,40,1440,390);
     display: flex;
     flex-direction: column;
+    border-top: var(--border);
     gap: fluid-prop(40,30,1440,390);
     @media (min-width:1440px) {
         padding-block: fluid-prop(80,60,1920,1440);
