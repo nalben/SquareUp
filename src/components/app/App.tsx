@@ -23,12 +23,6 @@ const Root = () => (
 );
 
 
-
-
-
-{/* <div className={classes.wrapper}></div> */}
-// <Link to={'/about'}>about</Link>
-
 export default Root;
 
 
