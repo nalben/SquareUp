@@ -1,0 +1,107 @@
+.section_con{
+    padding: fluid-prop(100, 50, 1440, 390) fluid-prop(250, 16, 1440, 390);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-wrap: balance;
+    color: transparent;
+    & h1 {
+        font-size: fluid-prop(38, 28, 1440, 390);
+        background-color: var(--grey15);
+        border-radius: 6px;
+        @media (min-width: 1440px) {
+            font-size: fluid-prop(48, 38, 1920, 1440)
+        }
+    }
+    & h6 {
+        font-size: fluid-prop(16, 14, 1440, 390);
+        background-color: var(--grey15);
+        border-radius: 6px;
+        @media (min-width: 1440px) {
+            font-size: fluid-prop(18, 16, 1920, 1440)
+        }
+    }
+    @media (min-width: 1440px) {
+        padding: fluid-prop(120, 100, 1920, 1440) fluid-prop(300, 250, 1920, 1440)
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: fluid-prop(112, 80, 1920, 390) fluid-prop(274, 205, 1920, 390);
+    align-items: center;
+    color: transparent;
+    & h1 {
+        font-size: fluid-prop(68, 34, 1920, 390);
+        text-align: center;
+        margin-bottom: 30px;
+        text-wrap: balance;
+        background-color: var(--grey15);
+        border-radius: 8px;
+        width: 70%;
+    }
+}
+.for {
+    width: max-content;
+    align-self: center;
+    display: flex;
+    align-items: end;
+    gap: 6px;
+    margin-bottom: 40px;
+    justify-content: center;
+    padding: fluid-prop(24, 18, 1920, 1440) fluid-prop(40, 30, 1920, 1440);
+    @media (max-width:800px) {
+        display: none;
+    }
+
+    & span {
+        font-size: fluid-prop(22, 16, 1920, 1440);
+        font-weight: 400;
+        padding: 12px 14px;
+        background-color: var(--grey15);
+        border-radius: 8px;
+        display: inline-block;
+    }
+
+    & h6 {
+        font-size: fluid-prop(22, 16, 1920, 1440);
+        margin-bottom: 12px;
+        font-weight: 400;
+    }
+}
+
+.for2 {
+    width: fit-content;
+    color: transparent;
+    align-self: center;
+    align-items: end;
+    text-align: center;
+    margin-bottom: 40px;
+    justify-content: center;
+    display: none;
+    font-size: fluid-prop(22, 16, 1920, 1440);
+    margin-bottom: 12px;
+    font-weight: 400;
+    padding: 18px 20px;
+    background-color: var(--grey15);
+    border-radius: 8px;
+
+    @media (max-width:800px) {
+        display: flex;
+    }
+}
+
+.btns {
+    display: flex;
+    gap: 13px;
+    & a {
+        padding: fluid-prop(18, 14, 1920, 1440) fluid-prop(28, 20, 1920, 1440) !important;
+        background-color: var(--grey15) !important;
+        color: transparent;
+    }
+}

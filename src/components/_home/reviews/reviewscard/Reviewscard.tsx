@@ -2,6 +2,7 @@ import React from 'react';
 import ReviewsData from '@/assets/data/reviews/data.json';
 import classes from './Reviewscard.module.scss';
 import { getImage } from '@/utils/icons';
+import { NavLink } from 'react-router-dom';
 
 const Reviewscard = () => {
   return (
@@ -23,9 +24,7 @@ const Reviewscard = () => {
                   <span>{item.position}</span>
                 </div>
               </div>
-              <a href={item.href} target="_blank" rel="noopener noreferrer">
-                Open Website
-              </a>
+              <NavLink to="/work">Open Website</NavLink>
             </div>
           </div>
         );

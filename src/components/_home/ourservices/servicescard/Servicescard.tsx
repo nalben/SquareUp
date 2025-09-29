@@ -3,6 +3,7 @@ import classes from './Servicescard.module.scss';
 import Iconcon from '@/components/__UI/iconcon/Iconcon';
 import { icons, SvgIcon } from '@/utils/icons'; // твой require.context
 import ServicesData from '@/assets/data/ourservices/data.json';
+import { NavLink } from 'react-router-dom';
 
 const Servicescard: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Servicescard: React.FC = () => {
               </div>
               <p>{item.content}</p>
             </div>
-            <a href="/">Learn More</a>
+            <NavLink to="/contact">Learn More</NavLink>
           </div>
         );
       })}

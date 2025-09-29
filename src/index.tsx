@@ -17,6 +17,7 @@ import CareersSkeleton from './pages/careers/CareersSkeleton';
 import { LazyCareers } from './pages/careers/Careers.Lazy';
 import ContactSkeleton from './pages/contact/ContactSkeleton';
 import { LazyContact } from './pages/contact/Contact.Lazy';
+import ScrollToTop from './components/__general/scroll/Scrolltotop';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('root not found');
@@ -24,6 +25,7 @@ const container = createRoot(root);
 
 container.render(
     <HashRouter>
+        <ScrollToTop />
         <Routes>
             <Route path="/" element={<App />}>
             <Route index element={<Navigate to="/home" replace />} />
